@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    # 'django.contrib.staticfiles',
+    'django.contrib.staticfiles',
     'corsheaders',
 	'rest_framework',
     'drf_yasg',
@@ -135,7 +135,7 @@ CORS_ALLOWED_ORIGINS = [
 	"http://127.0.0.1:8000",
 ]
 
-# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 # Internationalization

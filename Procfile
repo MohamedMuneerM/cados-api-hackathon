@@ -1,1 +1,1 @@
-web: gunicorn api.advocates.wsgi
+web: gunicorn api.api.wsgi

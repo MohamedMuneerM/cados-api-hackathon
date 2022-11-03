@@ -19,4 +19,18 @@ class AdvocateRetreiveView(generics.RetrieveAPIView):
     order_by = ['-id']
     queryset = models.Advocate.objects.all().order_by('-id')
 
+class CompanyList(generics.ListAPIView):
+    serializer_class = serializers.AdvocateSerializer
+    queryset = models.Company.objects.all().order_by('id')
+    filter_backends = [filters.SearchFilter]
+    order_by = ['-id']
+    search_fields = ['name']
+
+class CompanyRetreiveView(generics.RetrieveAPIView):
+    lookup_field = 'name'
+    model = models.Company
+    serializer_class = serializers.CompanySerializer
+    order_by = ['-id']
+    queryset = models.Company.objects.all().order_by('-id')
+
 

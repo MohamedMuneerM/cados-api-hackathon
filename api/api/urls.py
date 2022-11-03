@@ -37,6 +37,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('advocates/', views.AdvocateList.as_view()),
-    path('advocates/<str:username>/', views.AdvocateRetreiveView.as_view())
+    path('advocates/<str:username>/', views.AdvocateRetreiveView.as_view()),
+    path('companies/', views.CompanyList.as_view()),
+    path('companies/<str:name>/', views.CompanyRetreiveView.as_view())
 ]
     

@@ -21,12 +21,12 @@ class Company(AbstractTimestampMixin):
 
 class Advocate(AbstractTimestampMixin):
     username = models.CharField(max_length=255, unique=True)
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, null=True, blank=True)
     # profile_picture = models.ImageField(upload_to='profile_pictures', blank=True, null=True)
     bio = models.TextField()
-    twitter = models.URLField()
+    twitter = models.URLField(null=True, blank=True)
     companies = models.ManyToManyField(Company, related_name="advocates")
-    follower_count = models.IntegerField()
+    follower_count = models.IntegerField(null=True, blank=True)
 
     class Meta:
         verbose_name = "Advocate"

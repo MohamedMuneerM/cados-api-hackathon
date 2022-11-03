@@ -6,6 +6,7 @@ from rest_framework.response import Response
 
 class CustomPagination(pagination.PageNumberPagination):
     def get_paginated_response(self, data):
+        name = "companies" if self.request.path == "/companies/" else "advocates"
         return Response({
             'pagination': {
                 'current_page': self.page.number,
@@ -18,7 +19,7 @@ class CustomPagination(pagination.PageNumberPagination):
                 'results_found': self.page.paginator.count,
             },
             'total': self.page.paginator.count,
-            'advocates': data
+            name: data
         })
 
 

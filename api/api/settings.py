@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
 
 	'DEFAULT_PAGINATION_CLASS': 'api.customizations.CustomPagination',
-	'PAGE_SIZE': 50,
+	'PAGE_SIZE': 20,
     'SEARCH_PARAM': 'query',
 
 	'DEFAULT_RENDERER_CLASSES': (
